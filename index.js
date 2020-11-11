@@ -203,8 +203,7 @@ function alertBody(){
     if(botonPulsado==false && boton2==false)
     alert("Body");
     else {
-      botonPulsado=true;
-      boton2=true;
+      console.log(" ");
     }
   
   
