@@ -151,6 +151,7 @@ function cambiarColor(){
     else
     console.log("no es el boton");
   }
+  botonPulsado=false;
   
 }
 
@@ -171,6 +172,7 @@ function cambiarColorPagina(event){
     else
     console.log("no es el boton");
   }
+  botonPulsado=false;
   
 }
 
