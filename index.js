@@ -135,6 +135,8 @@ let boton2= false;
   liArray[i].querySelector('button').addEventListener("click",cambiarColor);
 
 function cambiarColor(){
+  //Cancelamos la llamada al elevento del body
+ event.stopPropagation();
   botonPulsado=true;
  //Recorremos de nuevo toda la lista
   for (var j=0; j<colorList.length; j++) {
@@ -155,7 +157,9 @@ function cambiarColor(){
 //Evento boton PageColor
 liArray[i].getElementsByTagName('button')[1].addEventListener("click",cambiarColorPagina);
 
-function cambiarColorPagina(){
+function cambiarColorPagina(event){
+  //Cancelamos la llamada al evento del body
+  event.stopPropagation();
   botonPulsado=true;
  //Recorremos de nuevo toda la lista
   for (var j=0; j<colorList.length; j++) {
@@ -176,6 +180,8 @@ function cambiarColorPagina(){
 liArray[i].addEventListener("click",alertNombreColor);
 
 function alertNombreColor(){
+   //Cancelamos la llamada al evento del body
+  event.stopPropagation();
  //Recorremos de nuevo toda la lista
   for (var j=0; j<colorList.length; j++) {
     boton2=true;
@@ -187,7 +193,8 @@ function alertNombreColor(){
     else
     console.log(botonPulsado);
   }
-  
+  boton2=false;
+botonPulsado=false;
 }
 boton2=false;
 botonPulsado=false;
@@ -200,11 +207,9 @@ document.body.addEventListener("click",alertBody);
 
 function alertBody(){
  //Recorremos de nuevo toda la lista
-    if(botonPulsado==false && boton2==false)
+    
     alert("Body");
-    else {
-      console.log(" ");
-    }
+   
   
   
   
